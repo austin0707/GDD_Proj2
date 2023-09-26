@@ -33,6 +33,8 @@ public class PlayerController : MonoBehaviour
     private float m_GroundDrag;
 
     [Header("Keybinds")]
+    [SerializeField]
+    [Tooltip("Key to press to jump")]
     private KeyCode m_JumpKey = KeyCode.Space;
     #endregion
 
@@ -53,6 +55,8 @@ public class PlayerController : MonoBehaviour
     {
         cc_Rb = GetComponent<Rigidbody>();
         cc_Rb.freezeRotation = true;
+
+        p_ReadyToJump = true;
     }
 
     private void Start()
@@ -90,6 +94,16 @@ public class PlayerController : MonoBehaviour
     {
         p_HorizontalInput = Input.GetAxisRaw("Horizontal");
         p_VerticalInput = Input.GetAxisRaw("Vertical");
+
+        // When to jump
+        if (Input.GetKey(m_JumpKey) && p_ReadyToJump && p_Grounded)
+        {
+            p_ReadyToJump = false;
+
+            Jump();
+
+            Invoke(nameof(ResetJump), m_JumpCooldown);
+        }
     }
 
     private void MovePlayer()
@@ -97,7 +111,15 @@ public class PlayerController : MonoBehaviour
         //Calculate movement direction
         p_MoveDirection = m_CameraTransform.forward * p_VerticalInput + m_CameraTransform.right * p_HorizontalInput;
 
-        cc_Rb.AddForce(p_MoveDirection.normalized * m_Speed * 10f, ForceMode.Force);
+        // on ground
+        if (p_Grounded)
+        {
+            cc_Rb.AddForce(p_MoveDirection.normalized * m_Speed * 10f, ForceMode.Force);
+        } else // in air
+        {
+            cc_Rb.AddForce(p_MoveDirection.normalized * m_Speed * 10f * m_AirMultiplier, ForceMode.Force);
+        }
+        
     }
 
     private void SpeedControl()

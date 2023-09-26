@@ -576,12 +576,24 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3465806144148339225, guid: de63213d73adaec4cbb361afa2c56801, type: 3}
+      propertyPath: m_JumpForce
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3465806144148339225, guid: de63213d73adaec4cbb361afa2c56801, type: 3}
       propertyPath: m_GroundDrag
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3465806144148339225, guid: de63213d73adaec4cbb361afa2c56801, type: 3}
+      propertyPath: m_JumpCooldown
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3465806144148339225, guid: de63213d73adaec4cbb361afa2c56801, type: 3}
       propertyPath: m_PlayerHeight
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3465806144148339225, guid: de63213d73adaec4cbb361afa2c56801, type: 3}
+      propertyPath: m_AirMultiplier
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 3465806144148339225, guid: de63213d73adaec4cbb361afa2c56801, type: 3}
       propertyPath: m_CameraTransform
