@@ -351,6 +351,7 @@
 "Assets/Scripts/MoveCamera.cs"
 "Assets/Scripts/PlayerController.cs"
 "Assets/Scripts/PlayerFollow.cs"
+"Assets/Scripts/Water.cs"
 -langversion:9.0
 
 /deterministic
