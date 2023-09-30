@@ -8,11 +8,23 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD:GDD_Project_Flameo/Assets/Prefabs/TNT.prefab
+  - component: {fileID: 1096104931892750177}
+  - component: {fileID: 434966138270354784}
+  - component: {fileID: 5676978611686729007}
+  - component: {fileID: 7470897078604390999}
+  - component: {fileID: 6945091987117693441}
+  - component: {fileID: 1142964520}
+  m_Layer: 7
+  m_Name: TNT
+  m_TagString: Explosive
+=======
   - component: {fileID: 264499887739824295}
   - component: {fileID: 9039672417626647456}
   m_Layer: 0
   m_Name: tnt 1
   m_TagString: Untagged
+>>>>>>> fb6b531c0da11e16185bc7737cc7ae253bea1a26:GDD_Project_Flameo/Assets/Prefabs/tnt 1.prefab
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129,3 +141,52 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+<<<<<<< HEAD:GDD_Project_Flameo/Assets/Prefabs/TNT.prefab
+--- !u!65 &7470897078604390999
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 552251369295601796}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6945091987117693441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 552251369295601796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 540b4d8985b3a7248a5737b62a5e7b0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ExplosiveForce: 750
+  m_ExplosiveRadius: 10
+  m_UpwardsModifier: 10
+  m_Destroyed: 1
+  m_ExplosionParticles: {fileID: 802182407032534329, guid: ea7c9f4f224afb549bc3c76dee4af64c, type: 3}
+--- !u!54 &1142964520
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 552251369295601796}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+=======
+>>>>>>> fb6b531c0da11e16185bc7737cc7ae253bea1a26:GDD_Project_Flameo/Assets/Prefabs/tnt 1.prefab

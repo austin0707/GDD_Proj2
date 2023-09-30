@@ -28,8 +28,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float m_PlayerHeight;
     [SerializeField]
-    private LayerMask m_IsGround;
-    [SerializeField]
     private float m_GroundDrag;
 
     [Header("Keybinds")]
@@ -68,7 +66,7 @@ public class PlayerController : MonoBehaviour
     #region Main Updates
     private void Update()
     {
-        p_Grounded = CheckBelowTag(m_IsGround);
+        p_Grounded = CheckBelowTag("Ground");
 
         MyInput();
         SpeedControl();
@@ -148,9 +146,18 @@ public class PlayerController : MonoBehaviour
     #endregion
 
     #region Miscellaneous Methods
-    public bool CheckBelowTag(LayerMask mask)
+    public bool CheckBelowTag(string tag)
     {
-        return Physics.Raycast(transform.position, Vector3.down, m_PlayerHeight * 0.5f + 0.2f, mask);
+        RaycastHit hit;
+        float maxDistance = m_PlayerHeight * 0.5f + 0.2f;
+        if (Physics.Raycast(transform.position, Vector3.down, out hit))
+        {
+            if (hit.distance < maxDistance && hit.collider.CompareTag(tag))
+            {
+                return true;
+            }
+        }
+        return false;
     }
     #endregion
 }
