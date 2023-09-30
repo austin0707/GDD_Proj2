@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 3663392862410002728}
   - component: {fileID: 3663392862410002729}
   - component: {fileID: 3663392862410002734}
-  m_Layer: 0
+  - component: {fileID: -687523675896683028}
+  - component: {fileID: 4995287332535291422}
+  m_Layer: 4
   m_Name: water stream
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4812,3 +4814,30 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &-687523675896683028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3663392862410002735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9e22723c1ef9420fbb4a334978e6097, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 1713344756482358745, guid: de63213d73adaec4cbb361afa2c56801, type: 3}
+--- !u!136 &4995287332535291422
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3663392862410002735}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
