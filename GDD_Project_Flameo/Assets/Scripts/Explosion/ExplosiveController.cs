@@ -30,6 +30,10 @@ public class ExplosiveController : MonoBehaviour
     private bool p_ShouldExplode;
     #endregion
 
+    #region Other Variables
+    public GameObject spawner = null;
+    #endregion
+
     #region Initialization
     private void Awake()
     {
@@ -65,6 +69,11 @@ public class ExplosiveController : MonoBehaviour
         if (m_Destroyed)
         {
             Destroy(gameObject);
+            
+            if (spawner != null)
+            {
+                spawner.GetComponent<ExplosiveSpawnerController>().ReduceCounter();
+            }
         } else
         {
             p_ShouldExplode = false;
@@ -79,6 +88,13 @@ public class ExplosiveController : MonoBehaviour
     public void MakeExplode()
     {
         p_ShouldExplode = true;
+    }
+    #endregion
+
+    #region Misc Methods
+    public void SetSpawner(GameObject spawn)
+    {
+        spawner = spawn;
     }
     #endregion
 }
