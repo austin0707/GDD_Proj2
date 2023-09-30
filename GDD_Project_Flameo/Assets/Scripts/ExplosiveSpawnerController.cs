@@ -34,7 +34,7 @@ public class ExplosiveSpawnerController : MonoBehaviour
     #region Main Updates
     private void Update()
     {
-        if (p_TimeToNextSpawn <= 0)
+        if (p_TimeToNextSpawn <= 0 && p_CurrNumExplosives < m_NumExplosives)
         {
             GameObject go = Instantiate(m_SpawnedExplosive, transform.position, Quaternion.identity);
             go.GetComponent<ExplosiveController>().SetSpawner(gameObject);
