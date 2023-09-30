@@ -40,6 +40,15 @@ public class PlayerController : MonoBehaviour
     private Rigidbody cc_Rb;
     #endregion
 
+    #region GrabVars
+    [SerializeField] Transform holdArea;
+    private GameObject heldObject;
+    private Rigidbody RBheldObject;
+    private float pickuprange = 5.0f;
+    private float pickupforce = 10.0f; 
+    [SerializeField] private LayerMask PickupMask;
+    #endregion
+
     #region Private Variables
     private float p_HorizontalInput;
     private float p_VerticalInput;
@@ -66,6 +75,26 @@ public class PlayerController : MonoBehaviour
     #region Main Updates
     private void Update()
     {
+        if(Input.GetKey(KeyCode.E)){
+            if(heldObject == null){
+                RaycastHit hit;
+                if(Physics.Raycast(transform.position,transform.TransformDirection(Vector3.forward), out hit, pickuprange)){
+                    if(hit.transform.gameObject.tag == "Pickup"){
+                        pickUpObject(hit.transform.gameObject);
+                    }
+                    
+                }
+
+            }
+            else{
+                dropObject();
+            }
+        }
+        if(heldObject != null){
+            MoveObject();
+        }
+
+        p_Grounded = CheckBelowTag(m_IsGround);
         p_Grounded = CheckBelowTag("Ground");
 
         MyInput();
@@ -80,7 +109,30 @@ public class PlayerController : MonoBehaviour
             cc_Rb.drag = 0;
         }
     }
-
+    void pickUpObject(GameObject pickObj){
+        if(pickObj.GetComponent<Rigidbody>()){
+            RBheldObject = pickObj.GetComponent<Rigidbody>();
+            RBheldObject.useGravity = false;
+            RBheldObject.drag = 10;
+            RBheldObject.constraints = RigidbodyConstraints.FreezeRotation;
+            RBheldObject.transform.parent = holdArea;
+            heldObject = pickObj;
+        }
+    }
+    void MoveObject(){
+        if(Vector3.Distance(heldObject.transform.position, holdArea.position) > 0.1f){
+            Vector3 movedir = (holdArea.position - heldObject.transform.position);
+            RBheldObject.AddForce(movedir * pickupforce);
+        }
+    }
+    void dropObject(){
+        RBheldObject.useGravity = true;
+        RBheldObject.drag = 1;
+        RBheldObject.constraints = RigidbodyConstraints.None;
+        RBheldObject.transform.parent = null;
+        heldObject = null;
+        
+    }
     private void FixedUpdate()
     {
         MovePlayer();
