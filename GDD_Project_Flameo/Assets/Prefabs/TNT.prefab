@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1142964520}
   m_Layer: 7
   m_Name: TNT
-  m_TagString: Untagged
+  m_TagString: Explosive
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,14 +111,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 540b4d8985b3a7248a5737b62a5e7b0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ExplosiveForce: 1000
+  m_ExplosiveForce: 750
   m_ExplosiveRadius: 10
-  m_UpwardsModifier: 1
+  m_UpwardsModifier: 10
   m_Destroyed: 1
   m_ExplosionParticles: {fileID: 802182407032534329, guid: ea7c9f4f224afb549bc3c76dee4af64c, type: 3}
-  m_IsExplosive:
-    serializedVersion: 2
-    m_Bits: 128
 --- !u!54 &1142964520
 Rigidbody:
   m_ObjectHideFlags: 0

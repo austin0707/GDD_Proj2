@@ -24,9 +24,6 @@ public class ExplosiveController : MonoBehaviour
     [SerializeField]
     [Tooltip("Particles when the exploside explodes")]
     private GameObject m_ExplosionParticles;
-
-    [SerializeField]
-    public LayerMask m_IsExplosive;
     #endregion
 
     #region Private Variables

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8093420816862002115}
   m_Layer: 7
   m_Name: Platform explosive
-  m_TagString: Untagged
+  m_TagString: Explosive
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -115,6 +115,3 @@ MonoBehaviour:
   m_UpwardsModifier: 1
   m_Destroyed: 0
   m_ExplosionParticles: {fileID: 802182407032534329, guid: 7c6aee66491a3d54baedd34609e7eacc, type: 3}
-  m_IsExplosive:
-    serializedVersion: 2
-    m_Bits: 128
