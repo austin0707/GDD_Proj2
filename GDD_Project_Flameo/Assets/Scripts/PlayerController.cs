@@ -68,7 +68,7 @@ public class PlayerController : MonoBehaviour
     #region Main Updates
     private void Update()
     {
-        p_Grounded = Physics.Raycast(transform.position, Vector3.down, m_PlayerHeight * 0.5f + 0.2f, m_IsGround);
+        p_Grounded = CheckBelowTag(m_IsGround);
 
         MyInput();
         SpeedControl();
@@ -109,7 +109,8 @@ public class PlayerController : MonoBehaviour
     private void MovePlayer()
     {
         //Calculate movement direction
-        p_MoveDirection = m_CameraTransform.forward * p_VerticalInput + m_CameraTransform.right * p_HorizontalInput;
+        p_MoveDirection = (new Vector3(m_CameraTransform.forward.x, 0, m_CameraTransform.forward.z)) * p_VerticalInput 
+            + (new Vector3(m_CameraTransform.right.x, 0, m_CameraTransform.right.z)) * p_HorizontalInput;
 
         // on ground
         if (p_Grounded)
@@ -143,6 +144,13 @@ public class PlayerController : MonoBehaviour
     private void ResetJump()
     {
         p_ReadyToJump = true;
+    }
+    #endregion
+
+    #region Miscellaneous Methods
+    public bool CheckBelowTag(LayerMask mask)
+    {
+        return Physics.Raycast(transform.position, Vector3.down, m_PlayerHeight * 0.5f + 0.2f, mask);
     }
     #endregion
 }
