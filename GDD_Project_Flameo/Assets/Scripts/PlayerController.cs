@@ -94,7 +94,6 @@ public class PlayerController : MonoBehaviour
             MoveObject();
         }
 
-        p_Grounded = CheckBelowTag(m_IsGround);
         p_Grounded = CheckBelowTag("Ground");
 
         MyInput();
