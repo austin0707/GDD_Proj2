@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Transform holdArea;
     private GameObject heldObject;
     private Rigidbody RBheldObject;
-    private float pickuprange = 5.0f;
+    private float pickuprange = 7.0f;
     private float pickupforce = 10.0f; 
     [SerializeField] private LayerMask PickupMask;
     #endregion
@@ -78,8 +78,10 @@ public class PlayerController : MonoBehaviour
         if(Input.GetKey(KeyCode.E)){
             if(heldObject == null){
                 RaycastHit hit;
-                if(Physics.Raycast(transform.position,transform.TransformDirection(Vector3.forward), out hit, pickuprange)){
-                    if(hit.transform.gameObject.tag == "Pickup"){
+                // Creates a Ray from the center of the viewport
+                Ray ray = Camera.main.ViewportPointToRay(new Vector3 (0.5f, 0.5f, 0));
+                if(Physics.Raycast(ray, out hit, pickuprange)){
+                    if( hit.transform.gameObject.layer == 6){
                         pickUpObject(hit.transform.gameObject);
                     }
                     
