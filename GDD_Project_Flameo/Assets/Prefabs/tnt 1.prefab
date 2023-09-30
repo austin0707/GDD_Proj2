@@ -8,23 +8,11 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-<<<<<<< HEAD:GDD_Project_Flameo/Assets/Prefabs/TNT.prefab
-  - component: {fileID: 1096104931892750177}
-  - component: {fileID: 434966138270354784}
-  - component: {fileID: 5676978611686729007}
-  - component: {fileID: 7470897078604390999}
-  - component: {fileID: 6945091987117693441}
-  - component: {fileID: 1142964520}
-  m_Layer: 7
-  m_Name: TNT
-  m_TagString: Explosive
-=======
   - component: {fileID: 264499887739824295}
   - component: {fileID: 9039672417626647456}
   m_Layer: 0
   m_Name: tnt 1
   m_TagString: Untagged
->>>>>>> fb6b531c0da11e16185bc7737cc7ae253bea1a26:GDD_Project_Flameo/Assets/Prefabs/tnt 1.prefab
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -141,7 +129,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
-<<<<<<< HEAD:GDD_Project_Flameo/Assets/Prefabs/TNT.prefab
 --- !u!65 &7470897078604390999
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -188,5 +175,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
-=======
->>>>>>> fb6b531c0da11e16185bc7737cc7ae253bea1a26:GDD_Project_Flameo/Assets/Prefabs/tnt 1.prefab
