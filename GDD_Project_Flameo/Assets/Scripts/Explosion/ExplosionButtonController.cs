@@ -18,7 +18,7 @@ public class ExplosionButtonController : ExplosiveController
         GameObject hit = collision.collider.gameObject;
         if (hit.CompareTag("Player"))
         {
-            if (hit.GetComponent<PlayerController>().CheckBelowTag(m_IsExplosive))
+            if (hit.GetComponent<PlayerController>().CheckBelowTag("Explosive"))
             {
                 base.MakeExplode();
             }

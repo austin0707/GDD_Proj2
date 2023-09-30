@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &552251369295601796
+--- !u!1 &639618433246081565
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,6 +8,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD:GDD_Project_Flameo/Assets/Prefabs/TNT.prefab
   - component: {fileID: 1096104931892750177}
   - component: {fileID: 434966138270354784}
   - component: {fileID: 5676978611686729007}
@@ -16,41 +17,95 @@ GameObject:
   - component: {fileID: 1142964520}
   m_Layer: 7
   m_Name: TNT
+  m_TagString: Explosive
+=======
+  - component: {fileID: 264499887739824295}
+  - component: {fileID: 9039672417626647456}
+  m_Layer: 0
+  m_Name: tnt 1
   m_TagString: Untagged
+>>>>>>> fb6b531c0da11e16185bc7737cc7ae253bea1a26:GDD_Project_Flameo/Assets/Prefabs/tnt 1.prefab
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1096104931892750177
+--- !u!4 &264499887739824295
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 552251369295601796}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.28, y: 23.09, z: 26.59}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_GameObject: {fileID: 639618433246081565}
+  m_LocalRotation: {x: -0, y: 0.6932009, z: -0, w: 0.72074443}
+  m_LocalPosition: {x: -2.08, y: 23, z: 27.95}
+  m_LocalScale: {x: 1.321569, y: 1.321569, z: 1.321569}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6249484818731416033}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 87.768, z: 0}
+--- !u!65 &9039672417626647456
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 639618433246081565}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1007458167543327263
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6249484818731416033}
+  - component: {fileID: 3902415857317529079}
+  - component: {fileID: 3453151138950317613}
+  m_Layer: 0
+  m_Name: pCube1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6249484818731416033
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007458167543327263}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 264499887739824295}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &434966138270354784
+--- !u!33 &3902415857317529079
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 552251369295601796}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &5676978611686729007
+  m_GameObject: {fileID: 1007458167543327263}
+  m_Mesh: {fileID: 4068373912626513877, guid: 2d713293812a44144afde4771dc3822b, type: 3}
+--- !u!23 &3453151138950317613
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 552251369295601796}
+  m_GameObject: {fileID: 1007458167543327263}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -86,6 +141,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+<<<<<<< HEAD:GDD_Project_Flameo/Assets/Prefabs/TNT.prefab
 --- !u!65 &7470897078604390999
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -111,14 +167,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 540b4d8985b3a7248a5737b62a5e7b0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ExplosiveForce: 1000
+  m_ExplosiveForce: 750
   m_ExplosiveRadius: 10
-  m_UpwardsModifier: 1
+  m_UpwardsModifier: 10
   m_Destroyed: 1
   m_ExplosionParticles: {fileID: 802182407032534329, guid: ea7c9f4f224afb549bc3c76dee4af64c, type: 3}
-  m_IsExplosive:
-    serializedVersion: 2
-    m_Bits: 128
 --- !u!54 &1142964520
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -135,3 +188,5 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+=======
+>>>>>>> fb6b531c0da11e16185bc7737cc7ae253bea1a26:GDD_Project_Flameo/Assets/Prefabs/tnt 1.prefab
