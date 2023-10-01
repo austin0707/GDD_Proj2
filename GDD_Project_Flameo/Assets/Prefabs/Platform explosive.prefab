@@ -243,5 +243,5 @@ MonoBehaviour:
   m_ExplosiveRadius: 5
   m_UpwardsModifier: 1
   m_Destroyed: 0
-  m_ExplosionParticles: {fileID: 802182407032534329, guid: 7c6aee66491a3d54baedd34609e7eacc, type: 3}
-  spawner: {fileID: 0}
+  m_ExplosionParticles: {fileID: 8705610973617544795, guid: a258ac011f0fe4dfca9eaf2556ea022a, type: 3}
+  spawner: {fileID: 8705610973617544795, guid: a258ac011f0fe4dfca9eaf2556ea022a, type: 3}

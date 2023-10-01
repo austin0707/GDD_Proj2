@@ -209,7 +209,7 @@ MonoBehaviour:
   m_ExplosiveRadius: 10
   m_UpwardsModifier: 3
   m_Destroyed: 1
-  m_ExplosionParticles: {fileID: 802182407032534329, guid: ea7c9f4f224afb549bc3c76dee4af64c, type: 3}
+  m_ExplosionParticles: {fileID: 8705610973617544795, guid: a258ac011f0fe4dfca9eaf2556ea022a, type: 3}
   spawner: {fileID: 0}
 --- !u!1 &9170273242303387883
 GameObject:
