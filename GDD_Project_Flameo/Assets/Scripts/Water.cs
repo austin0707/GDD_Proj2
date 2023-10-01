@@ -13,7 +13,7 @@ public class Water : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject == Player) {
-            SceneManager.LoadScene("Level1");
+            SceneManager.LoadScene("tryagain");
         }
     }
 }

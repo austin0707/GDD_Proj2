@@ -45,7 +45,8 @@ public class PlayerController : MonoBehaviour
     private GameObject heldObject;
     private Rigidbody RBheldObject;
     private float pickuprange = 7.0f;
-    private float pickupforce = 10.0f; 
+    private float pickupforce = 10.0f;
+    private bool pickedup = false;
     [SerializeField] private LayerMask PickupMask;
     #endregion
 
@@ -129,7 +130,9 @@ public class PlayerController : MonoBehaviour
         }
     }
     void pickUpObject(GameObject pickObj){
+        
         if(pickObj.GetComponent<Rigidbody>()){
+            pickedup = true;
             RBheldObject = pickObj.GetComponent<Rigidbody>();
             RBheldObject.useGravity = false;
             RBheldObject.drag = 10;
@@ -147,6 +150,7 @@ public class PlayerController : MonoBehaviour
         }
     }
     void dropObject(){
+        pickedup = false;
         RBheldObject.useGravity = true;
         RBheldObject.drag = 1;
         RBheldObject.constraints = RigidbodyConstraints.None;
@@ -260,6 +264,10 @@ public class PlayerController : MonoBehaviour
             }
         }
         return false;
+    }
+
+    public bool Pickedup() {
+        return pickedup;
     }
     #endregion
 }
