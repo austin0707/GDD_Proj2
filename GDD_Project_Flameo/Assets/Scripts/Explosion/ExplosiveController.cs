@@ -28,6 +28,7 @@ public class ExplosiveController : MonoBehaviour
 
     #region Private Variables
     private bool p_ShouldExplode;
+    private AudioSource p_Audio;
     #endregion
 
     #region Other Variables
@@ -38,6 +39,11 @@ public class ExplosiveController : MonoBehaviour
     private void Awake()
     {
         p_ShouldExplode = false;
+    }
+
+    private void Start()
+    {
+        p_Audio = transform.Find("Audio").GetComponent<AudioSource>();
     }
     #endregion
 
@@ -65,6 +71,8 @@ public class ExplosiveController : MonoBehaviour
             rb.AddExplosionForce(m_ExplosiveForce, transform.position, m_ExplosiveRadius, m_UpwardsModifier);
         }
         Instantiate(m_ExplosionParticles, transform.position, Quaternion.identity);
+
+        p_Audio.Play();
 
         if (m_Destroyed)
         {

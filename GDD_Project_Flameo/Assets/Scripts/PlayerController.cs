@@ -55,6 +55,12 @@ public class PlayerController : MonoBehaviour
     private Vector3 p_MoveDirection;
     private bool p_Grounded;
     private bool p_ReadyToJump;
+    private bool p_HighJump;
+    private bool p_IsWalking;
+
+    private AudioSource p_PickUpAudio;
+    private AudioSource p_LandingAudio;
+    private AudioSource p_WalkingAudio;
     #endregion
 
     #region Initialization
@@ -64,11 +70,17 @@ public class PlayerController : MonoBehaviour
         cc_Rb.freezeRotation = true;
 
         p_ReadyToJump = true;
+        p_HighJump = false;
+        p_IsWalking = false;
     }
 
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+
+        p_PickUpAudio = transform.Find("Pickup").GetComponent<AudioSource>();
+        p_LandingAudio = transform.Find("Landing").GetComponent<AudioSource>();
+        p_WalkingAudio = transform.Find("Footsteps").GetComponent<AudioSource>();
     }
     #endregion
 
@@ -81,7 +93,7 @@ public class PlayerController : MonoBehaviour
                 // Creates a Ray from the center of the viewport
                 Ray ray = Camera.main.ViewportPointToRay(new Vector3 (0.5f, 0.5f, 0));
                 if(Physics.Raycast(ray, out hit, pickuprange)){
-                    if( hit.transform.gameObject.layer == 6){
+                    if(hit.transform.gameObject.layer == 6){
                         pickUpObject(hit.transform.gameObject);
                     }
                     
@@ -95,8 +107,14 @@ public class PlayerController : MonoBehaviour
         if(heldObject != null){
             MoveObject();
         }
-
-        p_Grounded = CheckBelowTag("Ground");
+        p_HighJump = CheckHighJump(5) || p_HighJump;
+        bool curr = CheckBelowTag("Ground");
+        if (curr && !p_Grounded && p_HighJump)
+        {
+            p_LandingAudio.Play();
+            p_HighJump = false;
+        }
+        p_Grounded = curr;
 
         MyInput();
         SpeedControl();
@@ -118,6 +136,8 @@ public class PlayerController : MonoBehaviour
             RBheldObject.constraints = RigidbodyConstraints.FreezeRotation;
             RBheldObject.transform.parent = holdArea;
             heldObject = pickObj;
+
+            p_PickUpAudio.Play();
         }
     }
     void MoveObject(){
@@ -145,6 +165,22 @@ public class PlayerController : MonoBehaviour
     {
         p_HorizontalInput = Input.GetAxisRaw("Horizontal");
         p_VerticalInput = Input.GetAxisRaw("Vertical");
+
+        if ((p_HorizontalInput == 0f && p_VerticalInput == 0f) || !p_Grounded)
+        {
+            if (p_IsWalking)
+            {
+                p_WalkingAudio.Stop();
+            }
+            p_IsWalking = false;
+        } else
+        {
+            if (!p_IsWalking)
+            {
+                p_WalkingAudio.Play();
+            }
+            p_IsWalking = true;
+        }
 
         // When to jump
         if (Input.GetKey(m_JumpKey) && p_ReadyToJump && p_Grounded)
@@ -206,6 +242,19 @@ public class PlayerController : MonoBehaviour
         if (Physics.Raycast(transform.position, Vector3.down, out hit))
         {
             if (hit.distance < maxDistance && hit.collider.CompareTag(tag))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public bool CheckHighJump(int heightThreshold)
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, Vector3.down, out hit))
+        {
+            if (hit.distance > heightThreshold)
             {
                 return true;
             }
