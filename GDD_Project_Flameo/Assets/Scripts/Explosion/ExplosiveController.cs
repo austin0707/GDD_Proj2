@@ -28,6 +28,7 @@ public class ExplosiveController : MonoBehaviour
 
     #region Private Variables
     private bool p_ShouldExplode;
+    private bool p_IsDestroyed;
     private AudioSource p_Audio;
     #endregion
 
@@ -39,11 +40,12 @@ public class ExplosiveController : MonoBehaviour
     private void Awake()
     {
         p_ShouldExplode = false;
+        p_IsDestroyed = false;
     }
 
     private void Start()
     {
-        p_Audio = transform.Find("Audio").GetComponent<AudioSource>();
+        p_Audio = GameObject.Find("ExplosionSound").GetComponent<AudioSource>();
     }
     #endregion
 
@@ -51,7 +53,7 @@ public class ExplosiveController : MonoBehaviour
     private void Update()
     {
         ExplosiveCheck();
-        if (p_ShouldExplode)
+        if (p_ShouldExplode && !p_IsDestroyed)
         {
             Explode();
         }
@@ -76,6 +78,7 @@ public class ExplosiveController : MonoBehaviour
 
         if (m_Destroyed)
         {
+            p_IsDestroyed = true;
             Destroy(gameObject);
             
             if (spawner != null)

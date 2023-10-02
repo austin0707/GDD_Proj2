@@ -244,4 +244,5 @@ MonoBehaviour:
   m_UpwardsModifier: 1
   m_Destroyed: 0
   m_ExplosionParticles: {fileID: 8705610973617544795, guid: a258ac011f0fe4dfca9eaf2556ea022a, type: 3}
+  m_Audio: {fileID: 7738681905234634594}
   spawner: {fileID: 8705610973617544795, guid: a258ac011f0fe4dfca9eaf2556ea022a, type: 3}
