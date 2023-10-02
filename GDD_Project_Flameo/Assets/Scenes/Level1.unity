@@ -1008,8 +1008,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 432542297}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -47, y: 52.8, z: 10.8}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -33.6, y: 52.8, z: 10.8}
+  m_LocalScale: {x: 0.82149, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1526,7 +1526,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4613e8aaf2d59454d9e137d9137f5c45, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.1
+      value: -4.39
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4613e8aaf2d59454d9e137d9137f5c45, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1534,7 +1534,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4613e8aaf2d59454d9e137d9137f5c45, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 27.92
+      value: 34.85
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4613e8aaf2d59454d9e137d9137f5c45, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2239,15 +2239,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1212880443}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.3060236, y: 9.45, z: 4.54}
-  m_LocalScale: {x: 1.3447, y: 0.7811631, z: 1.3447}
+  m_LocalRotation: {x: -0, y: -0.031313777, z: -0, w: 0.99950963}
+  m_LocalPosition: {x: -1.84, y: 9.36, z: 4.98}
+  m_LocalScale: {x: 2.7200227, y: 0.91612095, z: 2.7200227}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2095436967}
   m_Father: {fileID: 0}
   m_RootOrder: 14
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -3.589, z: 0}
 --- !u!122 &1212880448
 Halo:
   m_ObjectHideFlags: 0
@@ -2274,7 +2274,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ExplosiveForce: 1000
   m_ExplosiveRadius: 5
-  m_UpwardsModifier: 1
+  m_UpwardsModifier: 5
   m_Destroyed: 0
   m_ExplosionParticles: {fileID: 8705610973617544795, guid: a258ac011f0fe4dfca9eaf2556ea022a, type: 3}
   spawner: {fileID: 0}
@@ -2289,8 +2289,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2.522415
-  m_Center: {x: 0, y: 0, z: -0.27613667}
+  m_Radius: 2.0648715
+  m_Center: {x: -0.45754424, y: 0, z: -0.27613673}
 --- !u!114 &1212880451
 MonoBehaviour:
   m_ObjectHideFlags: 0
