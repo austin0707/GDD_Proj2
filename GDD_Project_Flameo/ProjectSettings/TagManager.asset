@@ -8,6 +8,7 @@ TagManager:
   - Ground
   - Explosive
   - Pickup
+  - Water
   layers:
   - Default
   - TransparentFX

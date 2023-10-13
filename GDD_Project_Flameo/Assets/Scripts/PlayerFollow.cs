@@ -27,9 +27,16 @@ public class PlayerFollow : MonoBehaviour
     private float p_yRotation;
     private float p_xRotation;
     #endregion
+    #region start
+    private void Start()
+    {
+        sensX = 100.0f;
+        sensY = 100.0f;
+    }
+    #endregion
 
     #region Main Updates
-    private void LateUpdate()
+    private void FixedUpdate()
     {
         float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;
         float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensY;

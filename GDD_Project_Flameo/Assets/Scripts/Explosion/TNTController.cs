@@ -17,7 +17,10 @@ public class TNTController : ExplosiveController
         if (collision.collider.gameObject.CompareTag("Player"))
         {
             base.MakeExplode();
-        }
+        } else if (collision.collider.gameObject.CompareTag("Water")) {
+                base.MakeExplode();
+            }
+
     }
     #endregion
 }
